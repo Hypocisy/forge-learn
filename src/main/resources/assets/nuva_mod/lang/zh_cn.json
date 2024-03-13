@@ -1,0 +1,4 @@
+{
+  "debug.nuva.mob_age_info": "[debug] 实体 %s 会在: %s 秒后成熟",
+  "debug.nuva.mob_age_hover": "点击传送到实体 %s(%s) (%s, %s, %s)"
+}

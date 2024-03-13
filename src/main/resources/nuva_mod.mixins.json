@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "priority": 1000,
+  "package": "com.kumoe.nuva_mod.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "nuva_mod.refmap.json",
+  "mixins": [
+
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8"
+}
