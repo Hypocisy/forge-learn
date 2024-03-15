@@ -11,6 +11,7 @@ public class MobConfig {
     protected ForgeConfigSpec.IntValue CRAB;
     protected ForgeConfigSpec.IntValue ALLIGATOR_SNAPPING_TURTLE;
     protected ForgeConfigSpec.BooleanValue enableDebug;
+    protected ForgeConfigSpec.BooleanValue enableBoneMeal;
     protected ForgeConfigSpec.IntValue ANACONDA;
     protected ForgeConfigSpec.IntValue ANTEATER;
     protected ForgeConfigSpec.IntValue BALD_EAGLE;
@@ -99,6 +100,7 @@ public class MobConfig {
         builder.push("General settings");
         {
             enableDebug = builder.comment("Show debug info to player?").define("enableDebug", false);
+            enableBoneMeal = builder.comment("Allow player use bone meal?").define("enableBoneMeal", false);
         }
         builder.pop();
 

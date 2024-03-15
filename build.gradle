@@ -208,7 +208,7 @@ dependencies {
     implementation fg.deobf("curse.maven:citadel-331936:5143956")
     implementation fg.deobf("curse.maven:alexs-mobs-426558:5160697")
     implementation fg.deobf("curse.maven:jade-324717:5072729")
-
+    implementation fg.deobf("curse.maven:jei-238222:5101366")
 
 }
 

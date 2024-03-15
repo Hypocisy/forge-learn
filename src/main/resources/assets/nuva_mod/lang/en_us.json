@@ -1,4 +1,5 @@
 {
   "debug.nuva.mob_age_info": "[debug] Entity %s will grow up in: %s sec",
-  "debug.nuva.mob_age_hover": "Click here teleport to %s(%s) (%s, %s, %s)"
+  "debug.nuva.mob_age_hover": "Click here teleport to %s(%s) (%s, %s, %s)",
+  "debug.nuva.crop_hover": "Click here teleport to %s(%s) (%s, %s, %s)"
 }

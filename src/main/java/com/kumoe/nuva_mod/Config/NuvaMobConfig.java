@@ -25,6 +25,7 @@ public final class NuvaMobConfig {
     public static final Map<Class<? extends AgeableMob>, Integer> crabberDelightMobMap = new HashMap<>();
     public static final Map<Class<? extends AgeableMob>, Integer> vineryMobMap = new HashMap<>();
     public static boolean enableDebug;
+    public static boolean enableBoneMeal;
     public static int anaconda;
     public static int anteater;
     public static int alligator_snapping_turtle;
@@ -158,6 +159,7 @@ public final class NuvaMobConfig {
     private static void initGeneralSettings() {
         try {
             enableDebug = config.enableDebug.get();
+            enableBoneMeal = config.enableBoneMeal.get();
         } catch (Exception var) {
             NuvaMod.LOGGER.warn("An exception was caused trying to load the config for GeneralSettings.\n" + var);
         }
