@@ -19,8 +19,8 @@ import satisfyu.vinery.entity.wanderingwinemaker.WanderingWinemakerEntity;
 import java.util.HashMap;
 import java.util.Map;
 
-public final class NuvaConfig {
-    public static final Map<Class<? extends Animal>, Integer> alexmobMap = new HashMap<>();
+public final class NuvaMobConfig {
+    public static final Map<Class<? extends AgeableMob>, Integer> alexmobMap = new HashMap<>();
     public static final Map<Class<? extends AgeableMob>, Integer> vanillaMobMap = new HashMap<>();
     public static final Map<Class<? extends AgeableMob>, Integer> crabberDelightMobMap = new HashMap<>();
     public static final Map<Class<? extends AgeableMob>, Integer> vineryMobMap = new HashMap<>();
@@ -113,7 +113,7 @@ public final class NuvaConfig {
     public static int crab;
     public static int wanderingWineMakerVillager;
     public static int wanderingTraderVillager;
-    public static Config COMMON = ConfigHolder.COMMON;
+    public static MobConfig config = NuvaMod.getInstance().getMobConfig();
 
     public static void bake(ModConfig config) {
         // general settings
@@ -136,7 +136,7 @@ public final class NuvaConfig {
 
     private static void initCrabberDelightMobsConfig() {
         try {
-            crab = COMMON.CRAB.get();
+            crab = config.CRAB.get();
             crabberDelightMobMap.put(CrabEntity.class, crab);
         } catch (Exception var) {
             NuvaMod.LOGGER.warn("An exception was caused trying to load the config for Crabbers delight Config.\n" + var);
@@ -145,8 +145,8 @@ public final class NuvaConfig {
 
     private static void initVineryMobsConfig() {
         try {
-            wanderingTraderVillager = COMMON.WANDERING_TRADER_VILLAGER.get();
-            wanderingWineMakerVillager = COMMON.WANDERING_WINE_MAKER_VILLAGER.get();
+            wanderingTraderVillager = config.WANDERING_TRADER_VILLAGER.get();
+            wanderingWineMakerVillager = config.WANDERING_WINE_MAKER_VILLAGER.get();
 
             vineryMobMap.put(WanderingTrader.class, wanderingTraderVillager);
             vineryMobMap.put(WanderingWinemakerEntity.class, wanderingWineMakerVillager);
@@ -157,7 +157,7 @@ public final class NuvaConfig {
 
     private static void initGeneralSettings() {
         try {
-            enableDebug = COMMON.enableDebug.get();
+            enableDebug = config.enableDebug.get();
         } catch (Exception var) {
             NuvaMod.LOGGER.warn("An exception was caused trying to load the config for GeneralSettings.\n" + var);
         }
@@ -165,29 +165,29 @@ public final class NuvaConfig {
 
     private static void initVanillaMobsConfig() {
         try {
-            axolotl = COMMON.AXOLOTL.get();
-            caimal = COMMON.CAMEL.get();
-            frog = COMMON.FROG.get();
-            goat = COMMON.GOAT.get();
-            horse = COMMON.HORSE.get();
-            sniffer = COMMON.SNIFFER.get();
-            bee = COMMON.BEE.get();
-            cat = COMMON.CAT.get();
-            chicken = COMMON.CHICKEN.get();
-            cow = COMMON.COW.get();
-            fox = COMMON.FOX.get();
-            mushroomCow = COMMON.MUSHROOM_COW.get();
-            ocelot = COMMON.OCELOT.get();
-            panda = COMMON.PANDA.get();
-            parrot = COMMON.PARROT.get();
-            pig = COMMON.PIG.get();
-            polar_bear = COMMON.POLAR_BEAR.get();
-            rabbit = COMMON.RABBIT.get();
-            sheep = COMMON.SHEEP.get();
-            turtle = COMMON.TURTLE.get();
-            wolf = COMMON.WOLF.get();
-            villager = COMMON.VILLAGER.get();
-            allay = COMMON.ALLAY.get();
+            axolotl = config.AXOLOTL.get();
+            caimal = config.CAMEL.get();
+            frog = config.FROG.get();
+            goat = config.GOAT.get();
+            horse = config.HORSE.get();
+            sniffer = config.SNIFFER.get();
+            bee = config.BEE.get();
+            cat = config.CAT.get();
+            chicken = config.CHICKEN.get();
+            cow = config.COW.get();
+            fox = config.FOX.get();
+            mushroomCow = config.MUSHROOM_COW.get();
+            ocelot = config.OCELOT.get();
+            panda = config.PANDA.get();
+            parrot = config.PARROT.get();
+            pig = config.PIG.get();
+            polar_bear = config.POLAR_BEAR.get();
+            rabbit = config.RABBIT.get();
+            sheep = config.SHEEP.get();
+            turtle = config.TURTLE.get();
+            wolf = config.WOLF.get();
+            villager = config.VILLAGER.get();
+            allay = config.ALLAY.get();
 
             vanillaMobMap.put(Horse.class, horse);
             vanillaMobMap.put(Axolotl.class, axolotl);
@@ -217,66 +217,66 @@ public final class NuvaConfig {
 
     private static void initAlexMobsConfig() {
         try {
-            alligator_snapping_turtle = COMMON.ALLIGATOR_SNAPPING_TURTLE.get();
-            anaconda = COMMON.ANACONDA.get();
-            anteater = COMMON.ANTEATER.get();
-            bald_eagle = COMMON.BALD_EAGLE.get();
-            banana_slug = COMMON.BANANA_SLUG.get();
-            bison = COMMON.BISON.get();
-            blue_jay = COMMON.BLUE_JAY.get();
-            cachalot_whale = COMMON.CACHALOT_WHALE.get();
-            caiman = COMMON.CAIMAN.get();
-            capuchin_monkey = COMMON.CAPUCHIN_MONKEY.get();
-            cockroach = COMMON.COCKROACH.get();
-            cosmaw = COMMON.COSMAW.get();
-            crocodile = COMMON.CROCODILE.get();
-            crow = COMMON.CROW.get();
-            elephant = COMMON.ELEPHANT.get();
-            emu = COMMON.EMU.get();
-            endergrade = COMMON.ENDERGRADE.get();
-            enderiophage = COMMON.ENDERIOPHAGE.get();
-            flutter = COMMON.FLUTTER.get();
-            fly = COMMON.FLY.get();
-            froststalker = COMMON.FROSTSTALKER.get();
-            gazelle = COMMON.GAZELLE.get();
-            gelada_monkey = COMMON.GELADA_MONKEY.get();
-            gorilla = COMMON.GORILLA.get();
-            grizzly_bear = COMMON.GRIZZLY_BEAR.get();
-            hummingbird = COMMON.HUMMINGBIRD.get();
-            jerboa = COMMON.JERBOA.get();
-            kangaroo = COMMON.KANGAROO.get();
-            komodo_dragon = COMMON.KOMODO_DRAGON.get();
-            laviathan = COMMON.LAVIATHAN.get();
-            leafcutter_ant = COMMON.LEAFCUTTER_ANT.get();
-            maned_wolf = COMMON.MANED_WOLF.get();
-            mantis_shrimp = COMMON.MANTIS_SHRIMP.get();
-            mimic_octopus = COMMON.MIMIC_OCTOPUS.get();
-            moose = COMMON.MOOSE.get();
-            mudskipper = COMMON.MUDSKIPPER.get();
-            mungus = COMMON.MUNGUS.get();
-            orca = COMMON.ORCA.get();
-            platypus = COMMON.PLATYPUS.get();
-            potoo = COMMON.POTOO.get();
-            raccoon = COMMON.RACCOON.get();
-            rain_frog = COMMON.RAIN_FROG.get();
-            rattlesnake = COMMON.RATTLESNAKE.get();
-            rhinoceros = COMMON.RHINOCEROS.get();
-            roadrunner = COMMON.ROADRUNNER.get();
-            seagull = COMMON.SEAGULL.get();
-            seal = COMMON.SEAL.get();
-            shoebill = COMMON.SHOEBILL.get();
-            skunk = COMMON.SKUNK.get();
-            snow_leopard = COMMON.SNOW_LEOPARD.get();
-            spectre = COMMON.SPECTRE.get();
-            sugar_glider = COMMON.SUGAR_GLIDER.get();
-            sunbird = COMMON.SUNBIRD.get();
-            tarantula_hawk = COMMON.TARANTULA_HAWK.get();
-            tasmanian_devil = COMMON.TASMANIAN_DEVIL.get();
-            terrapin = COMMON.TERRAPIN.get();
-            tiger = COMMON.TIGER.get();
-            toucan = COMMON.TOUCAN.get();
-            tusklin = COMMON.TUSKLIN.get();
-            warped_toad = COMMON.WARPED_TOAD.get();
+            alligator_snapping_turtle = config.ALLIGATOR_SNAPPING_TURTLE.get();
+            anaconda = config.ANACONDA.get();
+            anteater = config.ANTEATER.get();
+            bald_eagle = config.BALD_EAGLE.get();
+            banana_slug = config.BANANA_SLUG.get();
+            bison = config.BISON.get();
+            blue_jay = config.BLUE_JAY.get();
+            cachalot_whale = config.CACHALOT_WHALE.get();
+            caiman = config.CAIMAN.get();
+            capuchin_monkey = config.CAPUCHIN_MONKEY.get();
+            cockroach = config.COCKROACH.get();
+            cosmaw = config.COSMAW.get();
+            crocodile = config.CROCODILE.get();
+            crow = config.CROW.get();
+            elephant = config.ELEPHANT.get();
+            emu = config.EMU.get();
+            endergrade = config.ENDERGRADE.get();
+            enderiophage = config.ENDERIOPHAGE.get();
+            flutter = config.FLUTTER.get();
+            fly = config.FLY.get();
+            froststalker = config.FROSTSTALKER.get();
+            gazelle = config.GAZELLE.get();
+            gelada_monkey = config.GELADA_MONKEY.get();
+            gorilla = config.GORILLA.get();
+            grizzly_bear = config.GRIZZLY_BEAR.get();
+            hummingbird = config.HUMMINGBIRD.get();
+            jerboa = config.JERBOA.get();
+            kangaroo = config.KANGAROO.get();
+            komodo_dragon = config.KOMODO_DRAGON.get();
+            laviathan = config.LAVIATHAN.get();
+            leafcutter_ant = config.LEAFCUTTER_ANT.get();
+            maned_wolf = config.MANED_WOLF.get();
+            mantis_shrimp = config.MANTIS_SHRIMP.get();
+            mimic_octopus = config.MIMIC_OCTOPUS.get();
+            moose = config.MOOSE.get();
+            mudskipper = config.MUDSKIPPER.get();
+            mungus = config.MUNGUS.get();
+            orca = config.ORCA.get();
+            platypus = config.PLATYPUS.get();
+            potoo = config.POTOO.get();
+            raccoon = config.RACCOON.get();
+            rain_frog = config.RAIN_FROG.get();
+            rattlesnake = config.RATTLESNAKE.get();
+            rhinoceros = config.RHINOCEROS.get();
+            roadrunner = config.ROADRUNNER.get();
+            seagull = config.SEAGULL.get();
+            seal = config.SEAL.get();
+            shoebill = config.SHOEBILL.get();
+            skunk = config.SKUNK.get();
+            snow_leopard = config.SNOW_LEOPARD.get();
+            spectre = config.SPECTRE.get();
+            sugar_glider = config.SUGAR_GLIDER.get();
+            sunbird = config.SUNBIRD.get();
+            tarantula_hawk = config.TARANTULA_HAWK.get();
+            tasmanian_devil = config.TASMANIAN_DEVIL.get();
+            terrapin = config.TERRAPIN.get();
+            tiger = config.TIGER.get();
+            toucan = config.TOUCAN.get();
+            tusklin = config.TUSKLIN.get();
+            warped_toad = config.WARPED_TOAD.get();
             alexmobMap.put(EntityAlligatorSnappingTurtle.class, alligator_snapping_turtle);
             alexmobMap.put(EntityAnaconda.class, anaconda);
             alexmobMap.put(EntityAnteater.class, anteater);

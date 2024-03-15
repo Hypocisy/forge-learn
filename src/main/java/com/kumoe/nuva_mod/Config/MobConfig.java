@@ -3,8 +3,7 @@ package com.kumoe.nuva_mod.Config;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.ModList;
 
-public class Config {
-
+public class MobConfig {
     protected final int minValue = 0;
     protected final int defaultValue = 6000;
     protected ForgeConfigSpec.IntValue WANDERING_TRADER_VILLAGER;
@@ -95,7 +94,8 @@ public class Config {
     protected ForgeConfigSpec.IntValue VILLAGER;
     protected ForgeConfigSpec.IntValue ALLAY;
 
-    protected Config(ForgeConfigSpec.Builder builder) {
+
+    public MobConfig(ForgeConfigSpec.Builder builder) {
         builder.push("General settings");
         {
             enableDebug = builder.comment("Show debug info to player?").define("enableDebug", false);
